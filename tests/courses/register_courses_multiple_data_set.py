@@ -1,14 +1,18 @@
+import pytest
+import unittest
+
+from ddt import ddt, data, unpack
+
 from pages.courses.register_courses_page import RegisterCoursesPage
 from utilities.teststatus import TestStatus
-import unittest, pytest
-from ddt import ddt, data, unpack
+
 
 @pytest.mark.usefixtures("oneTimeSetUp", "setUp")
 @ddt
 class RegisterMultipleCoursesTests(unittest.TestCase):
 
     @pytest.fixture(autouse=True)
-    def objectSetup(self, oneTimeSetUp):
+    def objectSetup(self, oneTimeSetUp, setUp):
         self.courses = RegisterCoursesPage(self.driver)
         self.ts = TestStatus(self.driver)
 
