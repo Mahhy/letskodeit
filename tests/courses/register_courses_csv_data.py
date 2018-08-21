@@ -1,10 +1,13 @@
-from letskodeit.pages.courses.register_courses_page import RegisterCoursesPage
-from letskodeit.pages.home.navigation_page import NavigationPage
-from letskodeit.utilities.teststatus import TestStatus
-import unittest, pytest
+import pytest
+import unittest
+
 from ddt import ddt, data, unpack
-from letskodeit.utilities.read_data import getCSVData
-import time
+
+from pages.courses.register_courses_page import RegisterCoursesPage
+from pages.home.navigation_page import NavigationPage
+from utilities.read_data import getCSVData
+from utilities.teststatus import TestStatus
+
 
 @pytest.mark.usefixtures("oneTimeSetUp", "setUp")
 @ddt

@@ -1,7 +1,9 @@
-import utilities.custom_logger as cl
-from pages.home.navigation_page import NavigationPage
 import logging
+
+import utilities.custom_logger as cl
 from base.basepage import BasePage
+from pages.home.navigation_page import NavigationPage
+
 
 class LoginPage(BasePage):
 
@@ -13,13 +15,13 @@ class LoginPage(BasePage):
         self.nav = NavigationPage(driver)
 
     # Locators
-    _login_link = "Login"
+    _login_link = "//div[@id='navbar']//a[@href='/sign_in']"
     _email_field = "user_email"
     _password_field = "user_password"
     _login_button = "commit"
 
     def clickLoginLink(self):
-        self.elementClick(self._login_link, locatorType="link")
+        self.elementClick(self._login_link, locatorType="xpath")
 
     def enterEmail(self, email):
         self.sendKeys(email, self._email_field)

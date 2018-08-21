@@ -8,9 +8,8 @@ Example:
     wdf = WebDriverFactory(browser)
     wdf.getWebDriverInstance()
 """
-import traceback
 from selenium import webdriver
-import os
+
 
 class WebDriverFactory():
 
@@ -39,7 +38,7 @@ class WebDriverFactory():
         Returns:
             'WebDriver Instance'
         """
-        baseURL = "https://letskodeit.teachable.com/"
+        baseURL = "https://learn.letskodeit.com/"
         if self.browser == "iexplorer":
             # Set ie driver
             driver = webdriver.Ie()
@@ -47,9 +46,9 @@ class WebDriverFactory():
             driver = webdriver.Firefox()
         elif self.browser == "chrome":
             # Set chrome driver
-            chromedriver = "/Users/atomar/Documents/workspace_personal/selenium/chromedriver"
-            os.environ["webdriver.chrome.driver"] = chromedriver
-            driver = webdriver.Chrome(chromedriver)
+            # chromedriver = "/Users/atomar/Documents/workspace_personal/selenium/chromedriver"
+            # os.environ["webdriver.chrome.driver"] = chromedriver
+            driver = webdriver.Chrome()
             driver.set_window_size(1440, 900)
         else:
             driver = webdriver.Firefox()
