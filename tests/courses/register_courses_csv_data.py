@@ -1,6 +1,6 @@
-import pytest
 import unittest
 
+import pytest
 from ddt import ddt, data, unpack
 
 from pages.courses.register_courses_page import RegisterCoursesPage
@@ -23,7 +23,7 @@ class RegisterCoursesCSVDataTests(unittest.TestCase):
         self.nav.navigateToAllCourses()
 
     @pytest.mark.run(order=1)
-    @data(*getCSVData("/Users/atomar/Documents/workspace_python/letskodeit/testdata.csv"))
+    @data(*getCSVData("C:\\Python_WorkSpace\\Training\\letskodeit\\testdata.csv"))
     @unpack
     def test_invalidEnrollment(self, courseName, ccNum, ccExp, ccCVV):
         self.courses.enterCourseName(courseName)
